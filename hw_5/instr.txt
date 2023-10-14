@@ -1,0 +1,5 @@
+
+docker rm zoomcamp_5_container
+
+docker build -t zoomcamp_5:latest .
+docker run -d -p 9696:9696 --name zoomcamp_5_container zoomcamp_5:latest
