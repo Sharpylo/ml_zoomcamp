@@ -6,8 +6,16 @@ from sklearn.metrics import roc_auc_score, confusion_matrix, classification_repo
 
 def train_model(model, X, y, parameters):
     model.set_params(**parameters)
-    model.fit(X, y)
+    model.fit(X, y, sample_weight=calculate_sample_weight(y))
     return model
+
+
+def calculate_sample_weight(y):
+    class_counts = np.bincount(y)
+    n_samples = len(y)
+    weights = n_samples / (len(class_counts) * class_counts)
+    sample_weight = np.array([weights[label] for label in y])
+    return sample_weight
 
 
 def retrain_with_errors(model, X_train, y_train, X_val, y_val):
@@ -37,10 +45,11 @@ def evaluate_model(model, X, y, dataset_name):
     print(cm)
 
 
-def train_and_evaluate_model(model, model_parameters, X_train, y_train, X_val, y_val, X_test, y_test):
+def train_evaluate_model_with_cv(model, model_parameters, X_train, y_train, X_val, y_val, X_test, y_test):
     print(f"_____ {model.__class__.__name__} result_____")
 
     # Train the model to find the best parameters
+    class_weight = {0: 1, 1: 3}
     best_model = train_model(model, X_train, y_train, model_parameters)
 
     # Evaluate on the validation set
@@ -53,12 +62,13 @@ def train_and_evaluate_model(model, model_parameters, X_train, y_train, X_val, y
     # Evaluate on the test set after retraining
     evaluate_model(best_model, X_test, y_test, "Test Set")
 
+    # Cross-Validation Evaluation
+    cross_validate_model(model, X_train, y_train)
+
     return best_model
 
 
-def train_and_evaluate_with_cross_validation(model, X, y):
-    scoring = ['accuracy', 'roc_auc', 'f1']
-    scores = cross_val_score(model, X, y, cv=5, scoring=scoring)
-    for metric, score in zip(scoring, scores.T):
-        print(f"Cross-Validation {metric.capitalize()} Scores: {score}")
-        print(f"Mean {metric.capitalize()}: {score.mean()}")
+def cross_validate_model(model, X, y):
+    scores = cross_val_score(model, X, y, cv=5, scoring='roc_auc')
+    print(f"Cross-Validation ROC AUC Scores: {scores}")
+    print(f"Mean ROC AUC: {scores.mean()}")
