@@ -2,3 +2,6 @@ git add .
 git commit -m "Your commit message here"
 git pull origin main
 git push origin main
+
+docker build -t midterm_project .
+docker run -p 9696:9696 --name my_midterm_project midterm_project

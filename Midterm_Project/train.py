@@ -1,14 +1,14 @@
 import time
-import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, StackingClassifier, VotingClassifier
-from sklearn.linear_model import LogisticRegression
+import pickle
+from sklearn.ensemble import GradientBoostingClassifier
 
-from train_logic import evaluate_model, train_evaluate_model_with_cv
+from train_logic import train_evaluate_model_with_cv
 from preprocess_logic import preprocess_data, preprocess_dataset, select_top_features_df
 
 
 start_time = time.time()
 file_path = "heart_attack_prediction_dataset.csv"
+model_file_path = "model.pkl"
 
 processed_data = preprocess_dataset(file_path)
 
@@ -31,7 +31,6 @@ df = select_top_features_df(processed_data, top_features)
 
 X_train, X_val, X_test, y_train, y_val, y_test = preprocess_data(df, "heart_attack_risk")
 
-
 # Create GradientBoostingClassifier and set its parameters
 gb_model = GradientBoostingClassifier(random_state=1)
 
@@ -49,4 +48,7 @@ best_gb_model = train_evaluate_model_with_cv(gb_model, gb_parameters, X_train, y
 end_time = time.time()
 execution_time = end_time - start_time
 
+with open(model_file_path, 'wb') as file:
+    pickle.dump(best_gb_model, file)
+    print(f"Модель сохранена в файлу '{model_file_path}'")
 print(f"Время выполнения: {execution_time} секунд")
