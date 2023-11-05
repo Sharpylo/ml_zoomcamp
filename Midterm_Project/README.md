@@ -37,13 +37,13 @@ pip install -r requirements.txt
 python predict.py
 ```
 Expected Result:
-![Run webapp result]('images/run_webapp_result.png')
+![Run webapp result]('https://github.com/Sharpylo/ml_zoomcamp/tree/main/Midterm_Project/images/run_webapp_result.png')
 - For running the test suite:
 ```
 python predict_test.py
 ```
 Expected Result:
-![Predict result]('images/predict_result.png')
+![Predict result]('https://github.com/Sharpylo/ml_zoomcamp/tree/main/Midterm_Project/images/predict_result.png')
 
 
 ### Building and Running Docker Container
@@ -53,20 +53,20 @@ Run the following command in the terminal where the Dockerfile is located:
 docker build -t midterm_project .
 ```
 Expected Result:
-![Build dockerfile result]('images/build_dockerfile_result.png')
+![Build dockerfile result]('https://github.com/Sharpylo/ml_zoomcamp/tree/main/Midterm_Project/images/build_dockerfile_result.png')
 - Run the Docker container:
 Run the container and map the port:
 ```
 docker run -p 9696:9696 --name my_midterm_project midterm_project
 ```
 Expected Result:
-![Run dockerfile result]('images/run_dockerfile_result.png')
+![Run dockerfile result]('https://github.com/Sharpylo/ml_zoomcamp/tree/main/Midterm_Project/images/run_dockerfile_result.png')
 - For running the test suite:
 ```
 python predict_test.py
 ```
 Expected Result:
-![Predict result]('images/predict_result.png')
+![Predict result]('https://github.com/Sharpylo/ml_zoomcamp/tree/main/Midterm_Project/images/predict_result.png')
 
 ### Observation: If you want to train a model
 
@@ -75,4 +75,4 @@ Make your changes in train.py and run the file using the command below.
 python train.py
 ```
 Expected Result:
-![Train result]('images/train_result.png')
+![Train result]('https://github.com/Sharpylo/ml_zoomcamp/tree/main/Midterm_Project/images/train_result.png')
