@@ -123,9 +123,5 @@ Expected Result:
 ![Train result](./images/train_result.png)
 
 ### Demonstration of work:
-<video width="800" height="600" controls>
-  <source src="./images/work_demonstration.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
-
+https://github.com/Sharpylo/ml_zoomcamp/raw/main/Midterm_Project/images/work_demonstration.mp4
