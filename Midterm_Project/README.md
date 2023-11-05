@@ -124,4 +124,4 @@ Expected Result:
 
 ### Demonstration of work:
 
-https://github.com/Sharpylo/ml_zoomcamp/issues/1#issue-1977825472
+https://github.com/Sharpylo/ml_zoomcamp/assets/109329799/a78df432-26af-4dad-b75a-d6062eaa184e
