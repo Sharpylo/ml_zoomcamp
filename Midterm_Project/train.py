@@ -2,16 +2,17 @@ import time
 import pickle
 from sklearn.ensemble import GradientBoostingClassifier
 
-from train_logic import train_evaluate_model_with_cv
-from preprocess_logic import preprocess_data, preprocess_dataset, select_top_features_df
+from logic.train_logic import train_evaluate_model_with_cv
+from logic.preprocess_logic import preprocess_data, preprocess_dataset, select_top_features_df
 
 
 start_time = time.time()
-file_path = "heart_attack_prediction_dataset.csv"
-model_file_path = "model.pkl"
+file_path = "data/heart_attack_prediction_dataset.csv"
+model_file_path = "data/model.pkl"
 
 processed_data = preprocess_dataset(file_path)
 
+# Features that have the greatest impact on prediction
 top_features = [
     'bmi',
     'age',
@@ -50,5 +51,5 @@ execution_time = end_time - start_time
 
 with open(model_file_path, 'wb') as file:
     pickle.dump(best_gb_model, file)
-    print(f"Модель сохранена в файлу '{model_file_path}'")
-print(f"Время выполнения: {execution_time} секунд")
+    print(f"The model has been saved to a file '{model_file_path}'")
+print(f"Execution time: {round(execution_time, 2)} seconds")
