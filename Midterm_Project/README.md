@@ -123,6 +123,9 @@ Expected Result:
 ![Train result](./images/train_result.png)
 
 ### Demonstration of work:
-![Demonstration](./images/work_demonstration.mp4)
+<video width="800" height="600" controls>
+  <source src="./images/work_demonstration.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
