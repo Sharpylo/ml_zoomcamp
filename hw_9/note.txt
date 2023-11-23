@@ -1,0 +1,2 @@
+docker build -t hw_9 -f C:\Prog\home_work\ml_zoomcamp\hw_9\Dockerfile .
+docker run -it --rm -p 8080:8080 hw_9:latest
