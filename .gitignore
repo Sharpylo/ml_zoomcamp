@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+env_bak/
+*.pyenv/
+.Python
+
+# Dependency directories
+lib/
+lib64/
+include/
+features/
+
+# Distribution / packaging
+dist/
+build/
+eggs/
+*.egg-info/
+
+# Compiled python modules
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Capstone_1 specific
+capstone_1/env/
+
+# Ignore log and temp files
+*.log
+*.temp
+
+# Ignore Visual Studio Code specific files
+.vscode/
+
+# Ignore system files that might be created on different operating systems
+.DS_Store
+Thumbs.db
