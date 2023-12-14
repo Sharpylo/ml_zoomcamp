@@ -3,17 +3,12 @@ import pandas as pd
 import numpy as np
 
 from sklearn.utils import shuffle
-from sklearn.model_selection import train_test_split, KFold
 from tensorflow.keras import models, layers, regularizers
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from sklearn.metrics import classification_report
 from tensorflow.keras.applications import MobileNetV2
-import kerastuner as kt
-from tensorflow.keras.optimizers import Adam
 
-from .constants import IMG_SIZE, BATCH_SIZE, AUTO, SEED, LIST_SEED, PATH_DATA, classes
-
-
+from .constants import IMG_SIZE, AUTO, PATH_DATA, classes
 
 # Load data
 def load_and_preprocess_data(file_path):
@@ -44,9 +39,7 @@ def create_dataset_loader(data, batch_size, preprocessing_functions=[]):
         loader = loader.map(func, num_parallel_calls=AUTO)
 
     loader = loader.batch(batch_size).prefetch(AUTO)
-
     return loader
-
 
 def create_custom_model(input_shape, num_classes):
     # Load pre-trained MobileNetV2 model with ImageNet weights
@@ -69,37 +62,33 @@ def create_custom_model(input_shape, num_classes):
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.0005)
 
     # Compile the model
-    model.compile(optimizer=optimizer,
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
-
+    model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
     return model
-
 
 def train_model(model, train_dataset, valid_dataset, name='best_model.h5', epochs=10):
     # Define callbacks
     early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True, verbose=1)
-    model_checkpoint = ModelCheckpoint(name, save_best_only=True, monitor='val_accuracy', mode='max', verbose=1)
+    model_checkpoint = ModelCheckpoint(name, save_best_only=True, save_weights_only=True, monitor='val_accuracy', mode='max', verbose=1)
 
     # Training
-    history = model.fit(
-        train_dataset,
-        epochs=epochs,
-        validation_data=valid_dataset,
-        callbacks=[early_stopping, model_checkpoint]
-    )
-    
+    history = model.fit(train_dataset, epochs=epochs, validation_data=valid_dataset, callbacks=[early_stopping, model_checkpoint])
     return history
 
+def evaluate_best_model(model_or_weights, test_data, test_dataset):
+    # If the input is a model instance, use it directly; otherwise, load the model from the weights path
+    if isinstance(model_or_weights, models.Model):
+        best_model = model_or_weights
+    else:
+        # Recreate the model architecture
+        best_model = create_custom_model(input_shape=(IMG_SIZE[0], IMG_SIZE[1], 3), num_classes=len(classes))
 
-def evaluate_best_model(best_model_path, test_data, test_dataset):
-    # Load the best model
-    best_model = tf.keras.models.load_model(best_model_path)
+        # Load the saved weights for the recreated model
+        best_model.load_weights(model_or_weights)
 
     # Display model summary
     best_model.summary()
 
-    # Evaluate on test set
+    # Evaluate on the test set
     test_eval_final = best_model.evaluate(test_dataset)
     print('--' * 50)
     print('Test Loss: {0:.3f}'.format(test_eval_final[0]))
@@ -112,5 +101,6 @@ def evaluate_best_model(best_model_path, test_data, test_dataset):
     # Classification report
     clf_best_model = classification_report(test_data['category'], pred_best_model, target_names=list(classes.values()))
     print(clf_best_model)
-    
-    
+
+
+

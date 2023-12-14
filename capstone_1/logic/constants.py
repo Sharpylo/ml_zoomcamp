@@ -4,9 +4,8 @@ import tensorflow as tf
 IMG_SIZE = (96, 96)
 BATCH_SIZE = 256
 AUTO = tf.data.AUTOTUNE
-SEED = 10
-LIST_SEED = [12, 23, 34, 42, 56, 68, 75, 82, 95, 111]
 PATH_DATA = 'C:\\Prog\\home_work\\data\\plants_data\\'
+NAME = 'best_model_1.h5'
 
 classes = {
     0: 'aloevera', 1: 'banana', 2: 'bilimbi', 3: 'cantaloupe', 4: 'cassava', 5: 'coconut',
