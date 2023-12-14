@@ -1,8 +1,7 @@
-import os
 import numpy as np
 from flask import Flask, request, jsonify
-from PIL import UnidentifiedImageError, Image
-from io import BytesIO
+from PIL import UnidentifiedImageError
+
 from logic.constants import IMG_SIZE, NAME, classes
 from logic.train_logic import img_preprocessing, create_custom_model
 
