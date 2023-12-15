@@ -5,3 +5,6 @@ git push origin main
 
 docker build -t midterm_project .
 docker run -p 9696:9696 --name my_midterm_project midterm_project
+
+docker build -t capstone_1 .
+docker run -p 9697:9697 --name my_capstone_1 capstone_1

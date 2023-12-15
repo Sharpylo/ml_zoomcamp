@@ -19,7 +19,8 @@ The dataset contains **30 types** of plants images, including **21000 training**
 
 ### EDA and Model Description
 
-The results of EDA and model fitting can be observed in the file **plants_classification .ipynb**
+The results of EDA and model fitting can be observed in the file  
+**plants_classification .ipynb**
 
 The following conclusions can be drawn from the estimation results of multiple models of models (Keras Tuner):  
 
@@ -58,7 +59,7 @@ The following conclusions can be drawn from the estimation results of multiple m
 **Class-wise Performance:**  
     The classification report provides details on the model's performance on individual classes. Some classes may exhibit higher accuracy, while others might pose more challenges.  
 
-    In summary, while the model exhibits promising learning capabilities, further refinement and exploration of hyperparameters may be beneficial to achieve even better performance. Additionally, thorough evaluation on a test set is crucial for a comprehensive assessment of the model's generalization abilities.  
+In summary, while the model exhibits promising learning capabilities, further refinement and exploration of hyperparameters may be beneficial to achieve even better performance. Additionally, thorough evaluation on a test set is crucial for a comprehensive assessment of the model's generalization abilities.  
 
 **Conclusion model 2:**  
 
@@ -78,7 +79,7 @@ The training loss decreases from 3.2850 to 0.8098 over the epochs
 
 **Conclusion in general**  
 
-    Both models showed some problems in training and testing. *Model 1* may suffer from insufficient complexity or insufficient data for training. *Model 2*, using the pre-trained MobileNetV2, performed better, but may need further tuning or data augmentation to improve its generalisation ability.  
+Both models showed some problems in training and testing. *Model 1* may suffer from insufficient complexity or insufficient data for training. *Model 2*, using the pre-trained MobileNetV2, performed better, but may need further tuning or data augmentation to improve its generalisation ability.  
 
 
 ### Installing and running the project
