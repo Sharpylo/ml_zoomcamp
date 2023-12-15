@@ -1,11 +1,11 @@
 import requests
 
 # Path to the image file you want to test
-image_path_1 = 'img_test/cucumber.png'
-image_path_2 = 'img_test/melon.jpg'
-image_path_3 = 'img_test/441123_1.jpg'
-image_path_4 = 'img_test/banan8.jpg'
-image_path_5 = 'img_test/coconut-exoticfruitscouk-565414.jpg'
+image_path_1 = 'images/img_test/cucumber.png'
+image_path_2 = 'images/img_test/melon.jpg'
+image_path_3 = 'images/img_test/441123_1.jpg'
+image_path_4 = 'images/img_test/banan8.jpg'
+image_path_5 = 'images/img_test/coconut-exoticfruitscouk-565414.jpg'
 
 # The URL of the local Flask server
 url = 'http://127.0.0.1:9697/predict_image'
