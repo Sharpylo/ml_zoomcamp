@@ -4,7 +4,7 @@ import tensorflow as tf
 IMG_SIZE = (96, 96)
 BATCH_SIZE = 256
 AUTO = tf.data.AUTOTUNE
-PATH_DATA = 'C:\\Prog\\home_work\\data\\plants_data\\'
+PATH_DATA = 'data_plants/'
 NAME = 'best_model_1.h5'
 
 classes = {
