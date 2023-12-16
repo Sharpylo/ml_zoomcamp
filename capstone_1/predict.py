@@ -2,23 +2,15 @@ import numpy as np
 from flask import Flask, request, jsonify
 from PIL import UnidentifiedImageError
 
-from logic.constants import IMG_SIZE, NAME, classes
-from logic.train_logic import img_preprocessing, create_custom_model
+from logic.constants import NAME, classes, FOLDER_PATH
+from logic.train_logic import img_preprocessing
+from logic.predict_logic import load_and_create_model, download_image
+
 
 app = Flask('Plants Classifier')
-
-def load_and_create_model(model_file_path):
-    # Recreate the model architecture
-    recreated_model = create_custom_model(input_shape=(IMG_SIZE[0], IMG_SIZE[1], 3), num_classes=len(classes))
-
-    # Load the saved weights for the recreated model
-    recreated_model.load_weights(model_file_path)
-
-    return recreated_model
-
 # Load the recreated model
-recreated_model = load_and_create_model(NAME)
-model = recreated_model
+model = load_and_create_model(NAME)
+
 
 @app.route("/predict_image", methods=["POST"])
 def predict_image():

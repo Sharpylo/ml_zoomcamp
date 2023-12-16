@@ -148,7 +148,7 @@ docker run -p 9697:9697 --name my_capstone_1 capstone_1
 ```
 Expected Result:  
 ![Run dockerfile result](images/img_readme/run_dockerfile_result.png)
-- For running the test suite:
+- To run the test package on the previously prepared image:
 ```
 python predict_test.py
 ```
@@ -157,7 +157,15 @@ We will send this picture for prediction:
 ![cucumber](images/img_test/cucumber.png)
 
 Expected Result:  
-![Predict result](images/img_readme/predict_result.png)
+![Predict result](images/img_readme/predict_result.png)  
+
+- To run the test suite and prediction by URL:  
+```
+python predict_on_url.py
+```
+
+Expected Result:  
+https://github.com/Sharpylo/ml_zoomcamp/assets/109329799/ab717745-80bb-42e7-b5b6-fed2f090b1a1
 
 ### Observation: If you want to train a model
 

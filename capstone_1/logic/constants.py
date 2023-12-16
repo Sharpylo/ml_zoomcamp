@@ -6,6 +6,7 @@ BATCH_SIZE = 256
 AUTO = tf.data.AUTOTUNE
 PATH_DATA = 'data_plants/'
 NAME = 'best_model_1.h5'
+FOLDER_PATH = 'images\img_test'
 
 classes = {
     0: 'aloevera', 1: 'banana', 2: 'bilimbi', 3: 'cantaloupe', 4: 'cassava', 5: 'coconut',
