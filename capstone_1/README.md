@@ -88,24 +88,28 @@ Both models showed some problems in training and testing. *Model 1* may suffer f
 1. Clone the repository:
 ```
 git clone https://github.com/Sharpylo/ml_zoomcamp.git
-```
-2. Download the data and unzip it into the **data_plants** folder      
-Download data from Kaggle datasets - [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification)  
-Expected Result:  
-![Data](images/img_readme/data.png)  
-3. Navigate to the project directory:
+``` 
+2. Navigate to the project directory:
 ```
 cd capstone_1
 ```
-4. Create a virtual environment named "env":
+3. Create a folder **data_plants**:
+```
+mkdir data_plants
+```
+4. Download the data and unzip it into the **data_plants** folder      
+Download data from Kaggle datasets - [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification)  
+Expected Result:  
+![Data](images/img_readme/data.png)
+5. Create a virtual environment named "env":
 ```
 python -m venv env
 ```
-5. Activate the virtual environment:
+6. Activate the virtual environment:
 ```
 env\Scripts\activate
 ```
-6. Install necessary dependencies:
+7. Install necessary dependencies:
 ```
 pip install -r requirements.txt
 ```
