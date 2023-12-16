@@ -90,7 +90,7 @@ Both models showed some problems in training and testing. *Model 1* may suffer f
 git clone https://github.com/Sharpylo/ml_zoomcamp.git
 ```
 2. Download the data and unzip it into the **data_plants** folder      
-[Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification)  
+Download data from Kaggle datasets - [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification)  
 Expected Result:  
 ![Data](images/img_readme/data.png)  
 3. Navigate to the project directory:
