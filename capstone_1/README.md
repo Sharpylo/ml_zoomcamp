@@ -122,7 +122,7 @@ python predict.py
 ```
 Expected Result:   
 ![Run webapp result](images/img_readme/run_webapp_result.png)
-- For running the test suite:
+- To run the test package on the previously prepared image:
 ```
 python predict_test.py
 ```
@@ -132,6 +132,15 @@ We will send this picture for prediction:
 
 Expected Result:  
 ![Predict result](images/img_readme/predict_result_.png)
+
+- To run the test suite and prediction by URL:  
+```
+python predict_on_url.py
+```
+
+Expected Result:  
+
+https://github.com/Sharpylo/ml_zoomcamp/assets/109329799/ab717745-80bb-42e7-b5b6-fed2f090b1a1
 
 ### Building and Running Docker Container
 - Build the Docker image:
@@ -159,13 +168,6 @@ We will send this picture for prediction:
 Expected Result:  
 ![Predict result](images/img_readme/predict_result.png)  
 
-- To run the test suite and prediction by URL:  
-```
-python predict_on_url.py
-```
-
-Expected Result:  
-https://github.com/Sharpylo/ml_zoomcamp/assets/109329799/ab717745-80bb-42e7-b5b6-fed2f090b1a1
 
 ### Observation: If you want to train a model
 
@@ -174,6 +176,7 @@ Make your changes in train.py and run the file using the command below.
 python train.py
 ```
 Expected Result:  
+
 https://github.com/Sharpylo/ml_zoomcamp/assets/109329799/531486bc-db29-4bf5-bac2-7df464099aaa
 
 
