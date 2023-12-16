@@ -93,7 +93,7 @@ git clone https://github.com/Sharpylo/ml_zoomcamp.git
     
 [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification)  
 Expected Result:  
-![Data](images/img_readme/data.png)
+![Data](images/img_readme/data.png)  
 3. Navigate to the project directory:
 ```
 cd capstone_1
