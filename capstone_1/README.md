@@ -101,7 +101,7 @@ mkdir data_plants
 Download data from Kaggle datasets - [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification). Archive size 1.37 Gb  
 
 Expected Result:  
-![Data](images/img_readme/data.png)
+![Data](images/img_readme/data.png)  
 5. Create a virtual environment named "env":
 ```
 python -m venv env
