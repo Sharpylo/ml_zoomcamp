@@ -1,5 +1,5 @@
 import requests
-import os
+
 
 from logic.constants import FOLDER_PATH
 from logic.predict_logic import download_image
@@ -20,7 +20,7 @@ while True:
     predefined_urls = {
         '1': 'https://fruit-time.ua/images/cache/blog/ru-e67711af-462e-4265-bbc4-d7513a4d0d5b-1110x740r.jpeg',
         '2': 'https://img.fozzyshop.com.ua/57145-thickbox_default/ogurec-ekstra.jpg',
-        '3': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Aloe_vera386868234.jpg/1200px-Aloe_vera386868234.jpg'
+        '3': 'https://file.agro-market.net/upload/medialibrary/ffc/ffcc8d5791587d06cb0e42fa26fc7582.jpg'
     }
 
     url = predefined_urls.get(user_choice)

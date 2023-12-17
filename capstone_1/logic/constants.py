@@ -5,7 +5,7 @@ IMG_SIZE = (96, 96)
 BATCH_SIZE = 256
 AUTO = tf.data.AUTOTUNE
 PATH_DATA = 'data_plants/'
-NAME = 'best_model_1.h5'
+NAME = 'best_model.h5'
 FOLDER_PATH = 'images\img_test'
 
 classes = {

@@ -98,7 +98,8 @@ cd capstone_1
 mkdir data_plants
 ```
 4. Download the data and unzip it into the **data_plants** folder      
-Download data from Kaggle datasets - [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification)  
+Download data from Kaggle datasets - [Plants Classification](https://www.kaggle.com/datasets/marquis03/plants-classification). Archive size 1.37 Gb  
+
 Expected Result:  
 ![Data](images/img_readme/data.png)
 5. Create a virtual environment named "env":

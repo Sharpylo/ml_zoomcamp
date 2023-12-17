@@ -2,9 +2,9 @@ import numpy as np
 from flask import Flask, request, jsonify
 from PIL import UnidentifiedImageError
 
-from logic.constants import NAME, classes, FOLDER_PATH
+from logic.constants import NAME, classes
 from logic.train_logic import img_preprocessing
-from logic.predict_logic import load_and_create_model, download_image
+from logic.predict_logic import load_and_create_model
 
 
 app = Flask('Plants Classifier')

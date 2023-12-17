@@ -10,7 +10,7 @@ image_path_5 = 'images/img_test/coconut-exoticfruitscouk-565414.jpg'
 # The URL of the local Flask server
 url = 'http://127.0.0.1:9697/predict_image'
 
-files = {'image': image_path_3}
+files = {'image': image_path_1}
 
 response = requests.post(url, files=files)
 
